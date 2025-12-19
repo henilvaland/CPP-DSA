@@ -26,13 +26,23 @@ void moveZeroes(vector<int>& nums) {
     }
 }
 
+int missingNumber(vector<int>& nums) {
+    int n = nums.size();
+    int sum1 = (n * (n + 1)) / 2;
+    int sum2 = 0;
+    for(int num : nums){
+        sum2+=num;
+    }
+    return sum1 - sum2;
+}
+
 int main() {
     vector<int> nums = {1, 0, 2, 7, 0, 4, 5};
     int target = 4;
-    moveZeroes(nums);
-    for(int i=  0; i < nums.size(); i++){
-        cout << nums[i] << " ";
-    }
+    int missingNum = missingNumber(nums);
+    //for(int i=  0; i < nums.size(); i++){
+        cout << missingNum << " ";
+    //}
     cout << endl;
     return 0;
 }
