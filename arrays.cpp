@@ -36,6 +36,17 @@ int missingNumber(vector<int>& nums) {
     return sum1 - sum2;
 }
 
+int removeDuplicates(vector<int>& nums) {
+    int i = 0;
+    for(int j = i + 1; j < nums.size(); j++){
+        if(nums[j] != nums[i]){
+            nums[i + 1] = nums[j];
+            i++;
+        }
+    }
+    return i+1;
+}
+
 int main() {
     vector<int> nums = {1, 0, 2, 7, 0, 4, 5};
     int target = 4;
